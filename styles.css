@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    background: #2c3e50;
+    color: white;
+    padding: 2rem 0;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+
+  .navbar {
+    background: #34495e;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0.5rem;
+    margin: 0;
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  .section {
+    padding: 2rem 0;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    flex: 1;
+    min-width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+
+  .footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  
