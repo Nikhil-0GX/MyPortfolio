@@ -1,83 +1,313 @@
+/* Global Resets and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: #f9f9f9;
-    color: #333;
-  }
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.7;
+  background-color: #f8f9fa; /* Light, neutral background */
+  color: #343a40; /* Dark gray for text for readability */
+  font-size: 16px;
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
 
-  .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 1rem 2rem;
-  }
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  .hero {
-    background: #2c3e50;
-    color: white;
-    padding: 2rem 0;
-  }
+/* Typography */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  line-height: 1.3;
+  color: #0056b3; /* A strong blue for headings */
+}
 
-  .profile {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
+h1 { font-size: 2.8em; margin-bottom: 0.5em; }
+h2 { font-size: 2.2em; margin-bottom: 1em; text-align: center; }
+h3 { font-size: 1.5em; margin-bottom: 0.75em; color: #007bff; } /* Brighter blue for card titles */
+h4 { font-size: 1.2em; margin-bottom: 0.5em; color: #495057; } /* Subtler heading for skills cards */
 
-  .profile-pic {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid white;
-  }
+p {
+  margin-bottom: 1em;
+}
 
-  .navbar {
-    background: #34495e;
-  }
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
 
-  .nav-links {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0.5rem;
-    margin: 0;
-    gap: 1.5rem;
-  }
+/* Header / Hero Section */
+.hero {
+  background: linear-gradient(135deg, #007bff 0%, #004085 100%); /* Professional blue gradient */
+  color: #ffffff;
+  padding: 60px 0 40px;
+  text-align: center;
+}
 
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
+.hero .profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-  .nav-links a:hover {
-    text-decoration: underline;
-  }
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+}
 
-  .section {
-    padding: 2rem 0;
-  }
+.profile-info h1 {
+  color: #fff;
+  font-weight: 700;
+}
 
-  .cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+.profile-info .subtitle {
+  font-size: 1.25em;
+  font-weight: 400;
+  margin-bottom: 15px;
+  opacity: 0.9;
+  color: #e9ecef;
+}
 
-  .card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1rem;
-    flex: 1;
-    min-width: 250px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  }
+.profile-info p {
+  font-size: 0.95em;
+  margin-bottom: 8px;
+  color: #f0f0f0;
+}
 
-  .footer {
-    background: #2c3e50;
-    color: white;
+/* Navigation Bar */
+.navbar {
+  background-color: #343a40; /* Dark, professional navbar */
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px; /* Spacing between nav items */
+}
+
+.nav-links a {
+  color: #f8f9fa;
+  font-weight: 500; /* Medium weight for nav links */
+  padding: 0.5em 0.75em;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: #ffffff;
+  background-color: #007bff; /* Highlight on hover */
+  text-decoration: none;
+}
+
+/* Main Content & Sections */
+main {
+  padding-top: 20px; /* Space below sticky nav */
+}
+.section {
+  padding: 50px 0;
+  border-bottom: 1px solid #dee2e6; /* Subtle separator */
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+
+#about p {
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Cards Layout */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.education-card { /* Specific styling if needed for the single education card */
+  max-width: 700px;
+  margin: 0 auto; /* Center the single education card */
+}
+.education-card p strong {
+    color: #343a40;
+}
+.education-card p em {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+
+/* Achievements List */
+.achievements-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.achievements-list li {
+  background-color: #e9ecef; /* Light gray background for list items */
+  padding: 15px 20px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border-left: 5px solid #007bff; /* Accent border */
+  font-size: 1.05em;
+}
+.achievements-list li strong {
+    color: #0056b3;
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+}
+#contact p {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px 10px; /* Added bottom margin for wrapping on small screens */
+  padding: 10px 18px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Footer */
+.footer {
+  background-color: #343a40; /* Consistent with navbar */
+  color: #adb5bd; /* Lighter text for footer */
+  text-align: center;
+  padding: 25px 0;
+  margin-top: 40px; /* Space above the footer */
+}
+
+.footer p {
+  margin-bottom: 0;
+  font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .profile-info h1 {
+    font-size: 2.4em;
+  }
+  .profile-info .subtitle {
+    font-size: 1.1em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero .profile {
+    flex-direction: column; /* Stack profile pic and info on smaller screens */
     text-align: center;
-    padding: 1rem;
   }
-  
+  .profile-info {
+    text-align: center;
+  }
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    gap: 10px;
+  }
+  .nav-links a {
+    padding: 0.75em 1em; /* Slightly larger tap target */
+    display: block; /* Make links full width for easier tapping */
+    text-align: center;
+  }
+  .cards {
+    grid-template-columns: 1fr; /* Single column for cards on smaller screens */
+  }
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  .section {
+    padding: 40px 0;
+  }
+  #about p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 40px 0 30px;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+  .profile-info h1 {
+    font-size: 2em;
+  }
+  .profile-info .subtitle {
+    font-size: 1em;
+  }
+  .profile-info p {
+    font-size: 0.9em;
+  }
+  .nav-links {
+    gap: 8px;
+  }
+  .nav-links a {
+    font-size: 0.95em;
+  }
+  .container {
+    width: 95%;
+  }
+  .social-links a {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+}
